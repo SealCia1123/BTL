@@ -11,7 +11,7 @@ Dòng đầu tiên: là 2 số nguyên cách nhau bằng dấu phẩy, số đ�
 Ví dụ
 
 7,10
-
+Hàng, dãy
 Giải thích
 
 Phòng học có 10 dãy bàn, mỗi dãy bàn có 7 ghế ngồi
