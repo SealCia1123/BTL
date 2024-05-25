@@ -1,0 +1,71 @@
+7,10
+5,2,11020102,Phan Thi Thu,Ha,16-12-95,Cong Nghe Ky Thuat Moi Truong,Thanh Hoa
+3,9,21021276,Tran Thi Nhu,Nguyen,05-03-97,Thiet ke do hoa,Binh Duong
+1,2,11022512,Vu Van,Thanh,03-11-98,Quan ly Tai nguyen va moi truong,Vinh Phuc
+2,1,21020733,Nguyen Cong,Viet,31-12-98,Quan tri van phong,Lai Chau
+5,9,11021865,Huynh Thi My,Thao,04-01-99,Truyen thong va Mang may tinh,Quang Nam
+7,6,21020986,Ngo Thi,Nhung,31-01-99,Kinh doanh quoc te,Lang Son
+4,5,11022952,Nguyen Thi Kim,Ngan,19-02-99,Kinh doanh quoc te,Binh Thuan
+3,1,11023609,Nguyen Huyen,Tram,10-03-99,Ngon ngu Anh,Phu Yen
+2,8,21021174,Pham Huynh Tan,Luc,07-04-99,Thu ky van phong,Lao Cai
+2,5,21021786,Tang Thi,May,15-04-99,Thiet ke noi that,Bac Kan
+2,7,21020157,Ka,Duyn,01-05-99,Thiet ke noi that,Ha Giang
+3,7,11021133,Hoang Trong,Anh,15-05-99,Thiet ke do hoa,Bac Lieu
+3,6,21021792,Do The,Cuong,27-06-99,Cong Nghe Ky Thuat Moi Truong,Vinh Long
+7,1,11021990,Ha Van,Bao,21-07-99,Quan tri kinh doanh,Ha Nam
+2,10,11023532,Vo Huu,Thinh,11-09-99,Anh van thuong mai,Yen Bai
+7,10,21021902,Tran Thanh,Sang,17-09-99,Cong nghe thong tin,Quang Binh
+4,2,11023631,Phan Nguyen Huy,Nhan,20-09-99,Anh van thuong mai,Gia Lai
+7,7,1022807,Nguyen Tran,Vu,23-11-99,Cong Nghe Ky Thuat Moi Truong,Dong Nai
+3,8,21020171,Vo Thi,Ngoc,26-11-99,Quan ly Tai nguyen va moi truong,Binh Phuoc
+4,9,21020278,Nguyen Hoang Uyen,Phuong,10-12-99,Quan tri cong nghe truyen thong,Quang Ngai
+2,6,11020783,Hoang Thi Thu,Ha,13-12-99,He thong thong tin quan ly,Dong Nai
+1,3,21020538,Ba Thi My,Tien,31-12-99,Thu ky y khoa,Thanh Hoa
+1,8,1023054,Le Van,Thai,04-01-00,Anh van thuong mai,Can Tho
+2,4,21020581,Pham Thi Quynh,Mai,07-01-00,Thiet ke do hoa,Quang Binh
+5,1,21021309,Nguyen Thi Thanh,Giang,07-01-00,Tai chinh ngan hang,Vinh Long
+4,6,21020651,Ninh Hoang Xuan Bao,Lam,19-01-00,Kinh doanh quoc te,Nam Dinh
+6,2,21021349,Le Van,Thanh,19-01-00,Toan ung dung,Binh Dinh
+1,1,1020152,Truong Quoc,Hoang,02-02-00,Quan tri Du Lich & Lu hanh,Quang Binh
+3,10,1024288,Phan Quang,Tien,03-02-00,Kinh doanh quoc te,Ben Tre
+1,6,21020060,Dieu,Phuong,09-02-00,Quan ly Tai nguyen va moi truong,Ba Ria - Vung Tau
+5,5,1021813,Hua,Khuol,11-02-00,Thiet ke thoi trang,Ha Nam
+4,1,1024297,Nguyen Thi,Hien,07-03-00,Ky thuat phan mem,Hai Duong
+1,5,11020625,Vu Ngoc,Binh,02-04-00,Truyen thong va Mang may tinh,Binh Phuoc
+4,10,21021295,Le Thi Kim,Ngoc,04-04-00,Tai chinh ngan hang,Dien Bien
+4,8,11021333,Le Quang,Thang,07-04-00,Toan ung dung,Quang Nam
+2,3,11022802,Hoang Dinh,Kien,09-04-00,Ngon ngu Anh,Dak Lak
+1,4,21021541,Le Huu,Bao,09-04-00,Quan tri kinh doanh,Binh Thuan
+1,9,11023470,Nguyen Minh,Quan,30-04-00,Do hoa Multimedia,Khanh Hoa
+7,8,11023076,Trinh Duy,Khuong,07-05-00,Cong nghe thong tin,Binh Thuan
+3,2,21020758,Le Quang,Bac,14-05-00,Cong nghe thong tin,Vinh Phuc
+6,3,11020267,Nguyen Anh,Tuan,18-05-00,Quan tri nhan luc,Phu Yen
+7,2,21020528,Le Thi Tieu,Ny,19-05-00,Thu ky van phong,Lang Son
+5,3,11023884,Keomounty,Khonsavanh,27-05-00,Thu ky y khoa,Lam Dong
+7,3,21021420,Trinh Duc,Anh,28-05-00,Quan tri van phong,Dong Nai
+3,3,1020737,Bui Hoang,Kha,31-05-00,Thu ky y khoa,TP. Ho Chi Minh
+6,10,11021984,Nguyen Thi,Thanh,13-07-00,Do hoa Multimedia,Long An
+6,4,21020002,Bui Pham Anh,Tuan,30-07-00,Thiet ke thoi trang,Gia Lai
+4,4,1021322,Dang Vi,Tin,12-08-00,Kinh doanh quoc te,Kien Giang
+7,5,21020011,Ka,Thi,13-08-00,Cong nghe thong tin,Tra Vinh
+2,9,1023097,Ho Hoang,Kiem,15-08-00,Quan tri cong nghe truyen thong,Quang Ninh
+6,9,21021872,Dinh Thi Hong,Ngoc,27-08-00,Quan tri Du Lich & Lu hanh,Quang Ngai
+6,7,11023053,Le Sy,Khang,01-09-00,Thiet ke do hoa,Bac Lieu
+5,4,21020818,Truong Thi Thuy,Linh,06-09-00,Quan tri nhan luc,Thai Nguyen
+3,4,11022884,Bui Trung,Hieu,08-09-00,Thu ky y khoa,Bac Ninh
+3,5,21020622,Nguyen Dinh,Dac,08-09-00,Quan tri kinh doanh,Thua Thien - Hue
+6,5,21020918,Nguyen Thi Ngan,Hang,16-09-00,Toan ung dung,Kien Giang
+7,4,11020555,Le Thanh,Cong,17-09-00,Quan tri cong nghe truyen thong,Binh Phuoc
+6,6,1021835,Thach Thi Ngoc,Bich,19-09-00,Quan tri Nha hang va Dich vu an uong,Lai Chau
+5,8,21021819,Huynh Thi Hong,Nhung,21-09-00,Ky thuat phan mem,Bac Kan
+4,3,21020817,To Thi Thanh,Hien,07-10-00,Kinh doanh quoc te,Thua Thien - Hue
+2,2,1020278,Ho Doan,Phuong,15-10-00,Ngon ngu Anh,Kien Giang
+5,7,21020702,Pham Thi Kim,Chi,15-10-00,Thiet ke do hoa,Quang Nam
+1,7,21021060,Nguyen Thoi,Dung,18-10-00,Quan tri kinh doanh,Lao Cai
+7,9,21020718,Le Duc,Hieu,19-10-00,Thu ky van phong,Cao Bang
+6,8,21020714,Huynh Nguyen Vi,Trinh,04-11-00,Quan tri van phong,Tien Giang
+6,1,21020456,Phan The,Nghia,06-11-00,Ngon ngu Anh,Lai Chau
+1,10,21020730,Pham Minh,Duc,14-11-00,Cong Nghe Ky Thuat Moi Truong,Binh Dinh
+5,10,21020377,Huynh Thanh,Thao,23-11-00,Ngon ngu Anh,Vinh Phuc
+4,7,21021795,Bui Ngoc,Tan,16-12-00,Quan tri Du Lich & Lu hanh,Kon Tum
+5,6,11023030,Ba Thi Thien,Da,20-12-00,Quan tri Khach San,Thua Thien - Hue

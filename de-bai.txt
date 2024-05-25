@@ -1,0 +1,65 @@
+Bài tập này, anh chị làm theo nhóm, làm được tới đâu thì nộp bài tới đó.
+
+Suy nghĩ kỹ thì sẽ thấy cách xử lý không khó, nên phân tích và thiết kế top-down để làm việc nhẹ nhàng.
+
+
+
+Tập tin SoDoSinhVien.txt có nội dung sau:
+
+Dòng đầu tiên: là 2 số nguyên cách nhau bằng dấu phẩy, số đầu tiên cho biết số chỗ/dãy bàn, số thứ 2 cho biết số dãy bàn trong phòng học.
+
+Ví dụ
+
+7,10
+
+Giải thích
+
+Phòng học có 10 dãy bàn, mỗi dãy bàn có 7 ghế ngồi
+
+
+
+Từ dòng thứ 2 thì mỗi dòng là thông tin về vị trí chỗ ngồi cùng thông tin cá nhân của sinh viên đó
+
+Nội dung 1 dòng mô tả
+
+vị trí chỗ, dãy, MSSV, họ lót, tên, ngày sinh(ngày-tháng-năm), ngành học, quê quán
+
+Ví dụ
+
+5,2,11020102,Phan Thi Thu,Ha,16-12-95,Cong Nghe Ky Thuat Moi Truong,Thanh Hoa.
+
+Giải thích
+
+Ngồi ở ghế số 5 dãy số 2 là sinh viên Phan Thị Thu Hà, quê quán: Thanh Hóa, mã số SV là 11020102, sinh ngày 16-12-1995, theo học ngành CNKT Môi Trường
+
+
+
+Yêu cầu
+
+Viết chương trình thực hiện yêu cầu sau:
+
+Tự tổ chức dữ liệu theo ý anh chị sau đó mở tập tin dữ liệu để đọc và lưu trữ thông tin của các sinh viên này trong bộ nhớ.
+
+Sau đó chương trình xuất hiện menu để NSD chọn lựa thực hiện công việc:
+
+1-Nhập số n (số dãy): In ra thông tin các sinh viên ngồi ở dãy bàn đó.
+
+2-Nhập số n (vị trí chỗ): In ra thông tin các sinh viên ngồi ở vị trí đó của tất cả các dãy bàn
+
+3-Nhập số m(dãy) và n(vị trí): In ra thông tin các sinh viên ngồi ở dãy m vị trí chỗ n
+
+4-Nhập khuôn dạng tên: In ra Thông tin các sinh viên có khuôn dạng tên vừa nhập (in thông tin cá nhân và vị trí chỗ ngồi)
+
+5-Nhập tháng m: In ra thông tin các sinh viên sinh vào tháng m (in thông tin cá nhân và vị trí chỗ ngồi)
+
+6-Nhập ngành K: In ra thông tin các sinh viên học ngành K
+
+7-Nhập quê quán Q: In ra thông tin các sinh viên mà quê quán là Q
+
+8-Nhập khuộn dạng đầu của MSSV: In ra thông tin các sinh viên có khuôn dạng đầu của MSSV như vừa nhập. VD nhập 102 thì sẽ in ra những SV có MSSV bắt đầu bằng 102
+
+9-Nhập khuôn dạng cuối của MSSV:In ra thông tin các sinh viên có khuôn dạng cuối của MSSV như vừa nhập. VD nhập 78 thì sẽ in ra những SV có MSSV mà 2 ký tự cuối là 78
+
+10-Để tránh gian lận, nhắc bài khi làm kiểm tra, cần phát hiện những vị trí có khả năng "nhờ cậy người khác": A là vị trí có thể "nhờ cậy người khác" nếu người ngồi ngay sau lưng A là người cùng quê hay cùng ngành học!!!Khi chọn chức năng này, hãy liệt kê ra các vị trí có khả năng xảy ra tình huống "nhờ cậy người khác" để giám thị phòng thi đổi chỗ!!!
+
+Deadline: 31/05/2024
