@@ -15,7 +15,7 @@ Ví dụ
 Giải thích
 
 Phòng học có 10 dãy bàn, mỗi dãy bàn có 7 ghế ngồi
-
+Dãy = col, Hàng = row
 
 
 Từ dòng thứ 2 thì mỗi dòng là thông tin về vị trí chỗ ngồi cùng thông tin cá nhân của sinh viên đó
