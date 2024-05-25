@@ -63,8 +63,6 @@ void inputSV(DSSV &dssv)
 	inData.ignore();
 	inData >> dssv.col;
 	inData.ignore();
-	cout << "Row: " << dssv.row << endl;
-	cout << "col: " << dssv.col << endl;
 
 	dssv.allocateMem();
 	for (int i = 0; i < dssv.row; i++)
@@ -93,10 +91,11 @@ void inputSV(DSSV &dssv)
 
 int main()
 {
-	DSSV test;
-	inputSV(test);
-	test.print();
-	test.freeMem();
+	DSSV dssv;
+	inputSV(dssv);
+	cout << "DSSV:\n";
+	dssv.print();
+	dssv.freeMem();
 	return 0;
 	// while (true)
 	// {
