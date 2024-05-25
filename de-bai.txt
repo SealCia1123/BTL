@@ -11,11 +11,11 @@ Dòng đầu tiên: là 2 số nguyên cách nhau bằng dấu phẩy, số đ�
 Ví dụ
 
 7,10
-
+Hàng, dãy
 Giải thích
 
 Phòng học có 10 dãy bàn, mỗi dãy bàn có 7 ghế ngồi
-
+Dãy = col, Hàng = row
 
 
 Từ dòng thứ 2 thì mỗi dòng là thông tin về vị trí chỗ ngồi cùng thông tin cá nhân của sinh viên đó
