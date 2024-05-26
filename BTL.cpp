@@ -13,25 +13,33 @@ struct SinhVien
 	int hang, day;
 	string hoLot, ten, queQuan, MSSV, nganhHoc;
 	Ngay ngaySinh;
+
+	void printInfo()
+	{
+		cout << "Hang: " << hang << "\n";
+		cout << "Day: " << day << "\n";
+		cout << "MSSV: " << MSSV << "\n";
+		cout << "Ho lot: " << hoLot << "\n";
+		cout << "Ten: " << ten << "\n";
+		cout << "Ngay sinh: " << ngaySinh.ngay << "/" << ngaySinh.thang << "/" << ngaySinh.nam << endl;
+		cout << "Nganh hoc: " << nganhHoc << "\n";
+		cout << "Que quan: " << queQuan << "\n";
+	}
 };
 
 // Struct DSSV de de quan ly so hang, cot
 struct DSSV
 {
-	int row = 0, col = 0;
-	SinhVien **ds;
+	int n;
+	SinhVien *ds;
 
-	void allocateMem()
+	void allocateMemory()
 	{
-		ds = new SinhVien *[this->row];
-		for (int i = 0; i < this->row; i++)
-			ds[i] = new SinhVien[col];
+		ds = new SinhVien[n];
 	}
 
-	void freeMem()
+	void freeMemory()
 	{
-		for (int i = 0; i < row; i++)
-			delete[] ds[i];
 		delete[] ds;
 	}
 };
@@ -40,32 +48,31 @@ void inputSV(DSSV &dssv)
 {
 	ifstream inData;
 	inData.open("SoDoSinhVien.txt", ios::in);
-	inData >> dssv.row;
+	int row, col;
+	inData >> row;
 	inData.ignore();
-	inData >> dssv.col;
+	inData >> col;
 	inData.ignore();
-
-	dssv.allocateMem();
-	for (int i = 0; i < dssv.row; i++)
+	dssv.n = row * col;
+	// Cap phat bo nho va nhap du lieu tu file
+	dssv.allocateMemory();
+	for (int i = 0; i < dssv.n; i++)
 	{
-		for (int j = 0; j < dssv.col; j++)
-		{
-			inData >> dssv.ds[i][j].hang;
-			inData.ignore();
-			inData >> dssv.ds[i][j].day;
-			inData.ignore();
-			getline(inData, dssv.ds[i][j].MSSV, ',');
-			getline(inData, dssv.ds[i][j].hoLot, ',');
-			getline(inData, dssv.ds[i][j].ten, ',');
-			inData >> dssv.ds[i][j].ngaySinh.ngay;
-			inData.ignore();
-			inData >> dssv.ds[i][j].ngaySinh.thang;
-			inData.ignore();
-			inData >> dssv.ds[i][j].ngaySinh.nam;
-			inData.ignore();
-			getline(inData, dssv.ds[i][j].nganhHoc, ',');
-			getline(inData, dssv.ds[i][j].queQuan);
-		}
+		inData >> dssv.ds[i].hang;
+		inData.ignore();
+		inData >> dssv.ds[i].day;
+		inData.ignore();
+		getline(inData, dssv.ds[i].MSSV, ',');
+		getline(inData, dssv.ds[i].hoLot, ',');
+		getline(inData, dssv.ds[i].ten, ',');
+		inData >> dssv.ds[i].ngaySinh.ngay;
+		inData.ignore();
+		inData >> dssv.ds[i].ngaySinh.thang;
+		inData.ignore();
+		inData >> dssv.ds[i].ngaySinh.nam;
+		inData.ignore();
+		getline(inData, dssv.ds[i].nganhHoc, ',');
+		getline(inData, dssv.ds[i].queQuan);
 	}
 	inData.close();
 }
@@ -96,24 +103,15 @@ int main()
 			} while (n <= 0 || n > 10);
 
 			cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << n << " =====\n";
-			for (int i = 0; i < dssv.row; i++)
+			for (int i = 0; i < dssv.n; i++)
 			{
-				for (int j = 0; j < dssv.col; j++)
+				if (dssv.ds[i].day == n)
 				{
-					if (dssv.ds[i][j].day == n)
-					{
-						cout << "Hang: " << dssv.ds[i][j].hang << "\n";
-						cout << "Day: " << dssv.ds[i][j].day << "\n";
-						cout << "MSSV: " << dssv.ds[i][j].MSSV << "\n";
-						cout << "Ho lot: " << dssv.ds[i][j].hoLot << "\n";
-						cout << "Ten: " << dssv.ds[i][j].ten << "\n";
-						cout << "Ngay sinh: " << dssv.ds[i][j].ngaySinh.ngay << "/" << dssv.ds[i][j].ngaySinh.thang << "/" << dssv.ds[i][j].ngaySinh.nam << endl;
-						cout << "Nganh hoc: " << dssv.ds[i][j].nganhHoc << "\n";
-						cout << "Que quan: " << dssv.ds[i][j].queQuan << "\n";
-						cout << "==========================================\n";
-					}
+					dssv.ds[i].printInfo();
+					cout << "==========================================\n";
 				}
 			}
+
 			break;
 		}
 
@@ -129,22 +127,12 @@ int main()
 			} while (n <= 0 || n > 10);
 
 			cout << "===== THONG TIN CAC SINH VIEN THEO HANG " << n << " =====\n";
-			for (int i = 0; i < dssv.row; i++)
+			for (int i = 0; i < dssv.n; i++)
 			{
-				for (int j = 0; j < dssv.col; j++)
+				if (dssv.ds[i].hang == n)
 				{
-					if (dssv.ds[i][j].hang == n)
-					{
-						cout << "Hang: " << dssv.ds[i][j].hang << "\n";
-						cout << "Day: " << dssv.ds[i][j].day << "\n";
-						cout << "MSSV: " << dssv.ds[i][j].MSSV << "\n";
-						cout << "Ho lot: " << dssv.ds[i][j].hoLot << "\n";
-						cout << "Ten: " << dssv.ds[i][j].ten << "\n";
-						cout << "Ngay sinh: " << dssv.ds[i][j].ngaySinh.ngay << "/" << dssv.ds[i][j].ngaySinh.thang << "/" << dssv.ds[i][j].ngaySinh.nam << endl;
-						cout << "Nganh hoc: " << dssv.ds[i][j].nganhHoc << "\n";
-						cout << "Que quan: " << dssv.ds[i][j].queQuan << "\n";
-						cout << "==========================================\n";
-					}
+					dssv.ds[i].printInfo();
+					cout << "==========================================\n";
 				}
 			}
 			break;
@@ -157,22 +145,12 @@ int main()
 			cin >> hang >> day;
 			cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << day << " VA HANG " << hang << " =====\n";
 
-			for (int i = 0; i < dssv.row; i++)
+			for (int i = 0; i < dssv.n; i++)
 			{
-				for (int j = 0; j < dssv.col; j++)
+				if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
 				{
-					if (dssv.ds[i][j].hang == hang && dssv.ds[i][j].day == day)
-					{
-						cout << "Hang: " << dssv.ds[i][j].hang << "\n";
-						cout << "Day: " << dssv.ds[i][j].day << "\n";
-						cout << "MSSV: " << dssv.ds[i][j].MSSV << "\n";
-						cout << "Ho lot: " << dssv.ds[i][j].hoLot << "\n";
-						cout << "Ten: " << dssv.ds[i][j].ten << "\n";
-						cout << "Ngay sinh: " << dssv.ds[i][j].ngaySinh.ngay << "/" << dssv.ds[i][j].ngaySinh.thang << "/" << dssv.ds[i][j].ngaySinh.nam << endl;
-						cout << "Nganh hoc: " << dssv.ds[i][j].nganhHoc << "\n";
-						cout << "Que quan: " << dssv.ds[i][j].queQuan << "\n";
-						cout << "==========================================\n";
-					}
+					dssv.ds[i].printInfo();
+					cout << "==========================================\n";
 				}
 			}
 			break;
@@ -180,7 +158,7 @@ int main()
 
 		case 0:
 			cout << "Ket thuc chuong trinh\n";
-			dssv.freeMem();
+			dssv.freeMemory();
 			return 0;
 		default:
 			cout << "Lua chon khong hop le!\n";
@@ -191,7 +169,7 @@ int main()
 		if (isContinue == '0')
 		{
 			cout << "Ket thuc chuong trinh\n";
-			dssv.freeMem();
+			dssv.freeMemory();
 			return 0;
 		}
 	}
