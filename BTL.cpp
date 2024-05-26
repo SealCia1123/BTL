@@ -90,6 +90,7 @@ int main()
 		cout << "4. In thong tin sinh vien co khuon dang ten\n";
 		cout << "Nhap vao lua chon: ";
 		cin >> choice;
+		cin.ignore();
 		switch (choice)
 		{
 		case 1:
@@ -162,10 +163,15 @@ int main()
 			string name;
 			cout << "Nhap khuon dang ten: ";
 			getline(cin, name);
+			cout << "===== THONG TIN CAC SINH VIEN CO KHUON DANG TEN " << name << " =====\n";
 			for (int i = 0; i < dssv.n; i++)
 			{
+				// ! Can chinh sua
 				if (dssv.ds[i].ten == name || dssv.ds[i].hoLot == name)
+				{
 					dssv.ds[i].printInfo();
+					cout << "==========================================\n";
+				}
 			}
 			break;
 		}
