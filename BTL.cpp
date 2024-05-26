@@ -87,6 +87,7 @@ int main()
 		cout << "1. In thong tin sinh vien ngoi day thu n\n";
 		cout << "2. In thong tin sinh vien ngoi hang thu n\n";
 		cout << "3. In thong tin sinh vien ngoi vi tri hang thu n, day thu m\n";
+		cout << "4. In thong tin sinh vien co khuon dang ten\n";
 		cout << "Nhap vao lua chon: ";
 		cin >> choice;
 		switch (choice)
@@ -152,6 +153,19 @@ int main()
 					dssv.ds[i].printInfo();
 					cout << "==========================================\n";
 				}
+			}
+			break;
+		}
+
+		case 4:
+		{
+			string name;
+			cout << "Nhap khuon dang ten: ";
+			getline(cin, name);
+			for (int i = 0; i < dssv.n; i++)
+			{
+				if (dssv.ds[i].ten == name || dssv.ds[i].hoLot == name)
+					dssv.ds[i].printInfo();
 			}
 			break;
 		}
