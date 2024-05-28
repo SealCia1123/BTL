@@ -94,229 +94,230 @@ int main()
 		cin.ignore();
 		switch (choice)
 		{
-		case 1:
-		{
-			int n;
-			do
-			{
-				cout << "Nhap vao day thu: ";
-				cin >> n;
-				if (n <= 0 || n > 10)
-					cout << "Day nhap khong hop le, nhap lai\n";
-			} while (n <= 0 || n > 10);
-
-			cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << n << " =====\n";
-			for (int i = 0; i < dssv.n; i++)
-			{
-				if (dssv.ds[i].day == n)
-				{
-					dssv.ds[i].printInfo();
-					cout << "==========================================\n";
-				}
-			}
-
-			break;
-		}
-
-		case 2:
-		{
-			int n;
-			do
-			{
-				cout << "Nhap vao hang thu: ";
-				cin >> n;
-				if (n <= 0 || n > 7)
-					cout << "Hang nhap khong hop le, nhap lai\n";
-			} while (n <= 0 || n > 7);
-
-			cout << "===== THONG TIN CAC SINH VIEN THEO HANG " << n << " =====\n";
-			for (int i = 0; i < dssv.n; i++)
-			{
-				if (dssv.ds[i].hang == n)
-				{
-					dssv.ds[i].printInfo();
-					cout << "==========================================\n";
-				}
-			}
-			break;
-		}
-
-		case 3:
-		{
-			int hang, day;
-			do
-			{
-				cout << "Nhap vao so hang va so day can tim: ";
-				cin >> hang >> day;
-				if (hang <= 0 || hang > 10 || day <= 0 || day > 7)
-					cout << "So hang va day khong hop le, nhap lai\n";
-			} while (hang <= 0 || hang > 7 || day <= 0 || day > 10);
-			cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << day << " VA HANG " << hang << " =====\n";
-
-			for (int i = 0; i < dssv.n; i++)
-			{
-				if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
-				{
-					dssv.ds[i].printInfo();
-					cout << "==========================================\n";
-				}
-			}
-			break;
-		}
-
-		case 4:
-		{
-			string name;
-			cout << "Nhap khuon dang ten: ";
-			getline(cin, name);
-			cout << "===== THONG TIN CAC SINH VIEN CO KHUON DANG TEN " << name << " =====\n";
-			for (int i = 0; i < dssv.n; i++)
-			{
-				// ! Can chinh sua
-				if (dssv.ds[i].ten == name || dssv.ds[i].hoLot == name)
-				{
-					dssv.ds[i].printInfo();
-					cout << "==========================================\n";
-				}
-			}
-			break;
-		}
-
-		case 10:
-		{
-			int hang, day;
-			do
-			{
-				cout << "Nhap so hang va so day cua sinh vien can kiem tra: ";
-				cin >> hang >> day;
-				if (hang <= 0 || day <= 0 || hang > 10 || day > 7)
-					cout << "So hang va day khong hop le, nhap lai\n";
-			} while (hang <= 0 || day <= 0 || hang > 7 || day > 10);
-			SinhVien svKT;
-			for (int i = 0; i < dssv.n; i++)
-			{
-				if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
-					svKT = dssv.ds[i];
-			}
-			SinhVien dsSVGianLan[8];
-
-			int size = 0;
-			switch (svKT.hang)
-			{
 			case 1:
 			{
-				if (svKT.day == 1)
+				int n;
+				do
 				{
-					for (int i = 0; i < dssv.n; i++)
+					cout << "Nhap vao day thu: ";
+					cin >> n;
+					if (n <= 0 || n > 10)
+						cout << "Day nhap khong hop le, nhap lai\n";
+				} while (n <= 0 || n > 10);
+
+				cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << n << " =====\n";
+				for (int i = 0; i < dssv.n; i++)
+				{
+					if (dssv.ds[i].day == n)
 					{
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
+						dssv.ds[i].printInfo();
+						cout << "==========================================\n";
 					}
 				}
 
-				else if (svKT.day == 10)
-				{
-					for (int i = 0; i < dssv.n; i++)
-					{
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-					}
-				}
-
-				else
-				{
-					for (int i = 0; i < dssv.n; i++)
-					{
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-					}
-				}
 				break;
 			}
 
-			case 7:
+			case 2:
 			{
-				if (svKT.day == 1)
+				int n;
+				do
 				{
-					for (int i = 0; i < dssv.n; i++)
-					{
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-					}
-				}
+					cout << "Nhap vao hang thu: ";
+					cin >> n;
+					if (n <= 0 || n > 7)
+						cout << "Hang nhap khong hop le, nhap lai\n";
+				} while (n <= 0 || n > 7);
 
-				else if (svKT.day == 10)
+				cout << "===== THONG TIN CAC SINH VIEN THEO HANG " << n << " =====\n";
+				for (int i = 0; i < dssv.n; i++)
 				{
-					for (int i = 0; i < dssv.n; i++)
+					if (dssv.ds[i].hang == n)
 					{
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-					}
-				}
-
-				else
-				{
-					for (int i = 0; i < dssv.n; i++)
-					{
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
-							dsSVGianLan[size++] = dssv.ds[i];
-						if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
-							dsSVGianLan[size++] = dssv.ds[i];
+						dssv.ds[i].printInfo();
+						cout << "==========================================\n";
 					}
 				}
 				break;
 			}
 
+			case 3:
+			{
+				int hang, day;
+				do
+				{
+					cout << "Nhap vao so hang va so day can tim: ";
+					cin >> hang >> day;
+					if (hang <= 0 || hang > 10 || day <= 0 || day > 7)
+						cout << "So hang va day khong hop le, nhap lai\n";
+				} while (hang <= 0 || hang > 7 || day <= 0 || day > 10);
+				cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << day << " VA HANG " << hang << " =====\n";
+
+				for (int i = 0; i < dssv.n; i++)
+				{
+					if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
+					{
+						dssv.ds[i].printInfo();
+						cout << "==========================================\n";
+					}
+				}
+				break;
+			}
+
+			case 4:
+			{
+				string name;
+				cout << "Nhap khuon dang ten: ";
+				getline(cin, name);
+				cout << "===== THONG TIN CAC SINH VIEN CO KHUON DANG TEN " << name << " =====\n";
+				for (int i = 0; i < dssv.n; i++)
+				{
+					// ! Can chinh sua
+					if (dssv.ds[i].ten == name || dssv.ds[i].hoLot == name)
+					{
+						dssv.ds[i].printInfo();
+						cout << "==========================================\n";
+					}
+				}
+				break;
+			}
+
+			case 10:
+			{
+				int hang, day;
+				do
+				{
+					cout << "Nhap so hang va so day cua sinh vien can kiem tra: ";
+					cin >> hang >> day;
+					if (hang <= 0 || day <= 0 || hang > 10 || day > 7)
+						cout << "So hang va day khong hop le, nhap lai\n";
+				} while (hang <= 0 || day <= 0 || hang > 7 || day > 10);
+
+				SinhVien svKT;
+				for (int i = 0; i < dssv.n; i++)
+				{
+					if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
+						svKT = dssv.ds[i];
+				}
+				SinhVien dsSVGianLan[8];
+
+				int size = 0;
+				switch (svKT.hang)
+				{
+					case 1:
+					{
+						if (svKT.day == 1)
+						{
+							for (int i = 0; i < dssv.n; i++)
+							{
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+							}
+						}
+
+						else if (svKT.day == 10)
+						{
+							for (int i = 0; i < dssv.n; i++)
+							{
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+							}
+						}
+
+						else
+						{
+							for (int i = 0; i < dssv.n; i++)
+							{
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+							}
+						}
+						break;
+					}
+
+					case 7:
+					{
+						if (svKT.day == 1)
+						{
+							for (int i = 0; i < dssv.n; i++)
+							{
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+							}
+						}
+
+						else if (svKT.day == 10)
+						{
+							for (int i = 0; i < dssv.n; i++)
+							{
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+							}
+						}
+
+						else
+						{
+							for (int i = 0; i < dssv.n; i++)
+							{
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+									dsSVGianLan[size++] = dssv.ds[i];
+							}
+						}
+						break;
+					}
+
+					default:
+					{
+					}
+				}
+
+				cout << "===== CAC SINH VIEN CO VI TRI CO THE GIAN LAN ======\n";
+				for (int i = 0; i < size; i++)
+				{
+					dsSVGianLan[i].printInfo();
+					cout << "==========================================\n";
+				}
+				break;
+			}
+
+			case 0:
+				cout << "Ket thuc chuong trinh\n";
+				dssv.freeMemory();
+				return 0;
 			default:
-			{
-			}
-			}
-
-			cout << "===== CAC SINH VIEN CO VI TRI CO THE GIAN LAN ======\n";
-			for (int i = 0; i < size; i++)
-			{
-				dsSVGianLan[i].printInfo();
-				cout << "==========================================\n";
-			}
-			break;
-		}
-
-		case 0:
-			cout << "Ket thuc chuong trinh\n";
-			dssv.freeMemory();
-			return 0;
-		default:
-			cout << "Lua chon khong hop le!\n";
+				cout << "Lua chon khong hop le!\n";
 		}
 		char isContinue;
 		cout << "Tiep tuc? (Nhap 0 de dung): ";
