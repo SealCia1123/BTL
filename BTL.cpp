@@ -193,41 +193,41 @@ int main()
 						cout << "So hang va day khong hop le, nhap lai\n";
 				} while (hang <= 0 || day <= 0 || hang > 7 || day > 10);
 
-				SinhVien svKT;
+				SinhVien svCanKT;
 				for (int i = 0; i < dssv.n; i++)
 				{
 					if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
-						svKT = dssv.ds[i];
+						svCanKT = dssv.ds[i];
 				}
 
 				SinhVien dsSVGianLan[8];
 				int size = 0;
-				switch (svKT.hang)
+				switch (svCanKT.hang)
 				{
 					case 1:
 					{
-						if (svKT.day == 1)
+						if (svCanKT.day == 1)
 						{
 							for (int i = 0; i < dssv.n; i++)
 							{
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+								if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
 
-						else if (svKT.day == 10)
+						else if (svCanKT.day == 10)
 						{
 							for (int i = 0; i < dssv.n; i++)
 							{
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+								if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -236,15 +236,15 @@ int main()
 						{
 							for (int i = 0; i < dssv.n; i++)
 							{
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+								if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
+								else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -253,28 +253,28 @@ int main()
 
 					case 7:
 					{
-						if (svKT.day == 1)
+						if (svCanKT.day == 1)
 						{
 							for (int i = 0; i < dssv.n; i++)
 							{
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+								if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
 
-						else if (svKT.day == 10)
+						else if (svCanKT.day == 10)
 						{
 							for (int i = 0; i < dssv.n; i++)
 							{
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+								if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -283,15 +283,15 @@ int main()
 						{
 							for (int i = 0; i < dssv.n; i++)
 							{
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+								if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+								else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -302,21 +302,21 @@ int main()
 					{
 						for (int i = 0; i < dssv.n; i++)
 						{
-							if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+							if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day - 1)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+							else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+							else if (dssv.ds[i].hang == svCanKT.hang - 1 && dssv.ds[i].day == svCanKT.day + 1)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+							else if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day - 1)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+							else if (dssv.ds[i].hang == svCanKT.hang && dssv.ds[i].day == svCanKT.day + 1)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
+							else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day - 1)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+							else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day)
 								dsSVGianLan[size++] = dssv.ds[i];
-							else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
+							else if (dssv.ds[i].hang == svCanKT.hang + 1 && dssv.ds[i].day == svCanKT.day + 1)
 								dsSVGianLan[size++] = dssv.ds[i];
 						}
 					}
