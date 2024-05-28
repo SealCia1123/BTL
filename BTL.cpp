@@ -199,8 +199,8 @@ int main()
 					if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
 						svKT = dssv.ds[i];
 				}
-				SinhVien dsSVGianLan[8];
 
+				SinhVien dsSVGianLan[8];
 				int size = 0;
 				switch (svKT.hang)
 				{
@@ -259,9 +259,9 @@ int main()
 							{
 								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -272,9 +272,9 @@ int main()
 							{
 								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -285,13 +285,13 @@ int main()
 							{
 								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
 									dsSVGianLan[size++] = dssv.ds[i];
-								if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+								else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
 									dsSVGianLan[size++] = dssv.ds[i];
 							}
 						}
@@ -300,6 +300,25 @@ int main()
 
 					default:
 					{
+						for (int i = 0; i < dssv.n; i++)
+						{
+							if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day - 1)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang - 1 && dssv.ds[i].day == svKT.day + 1)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day - 1)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang && dssv.ds[i].day == svKT.day + 1)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day - 1)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day)
+								dsSVGianLan[size++] = dssv.ds[i];
+							else if (dssv.ds[i].hang == svKT.hang + 1 && dssv.ds[i].day == svKT.day + 1)
+								dsSVGianLan[size++] = dssv.ds[i];
+						}
 					}
 				}
 
