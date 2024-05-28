@@ -105,7 +105,7 @@ int main()
 						cout << "Day nhap khong hop le, nhap lai\n";
 				} while (n <= 0 || n > 10);
 
-				cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << n << " =====\n";
+				cout << "\n===== THONG TIN CAC SINH VIEN THEO DAY " << n << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
 					if (dssv.ds[i].day == n)
@@ -129,7 +129,7 @@ int main()
 						cout << "Hang nhap khong hop le, nhap lai\n";
 				} while (n <= 0 || n > 7);
 
-				cout << "===== THONG TIN CAC SINH VIEN THEO HANG " << n << " =====\n";
+				cout << "\n===== THONG TIN CAC SINH VIEN THEO HANG " << n << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
 					if (dssv.ds[i].hang == n)
@@ -151,8 +151,8 @@ int main()
 					if (hang <= 0 || hang > 10 || day <= 0 || day > 7)
 						cout << "So hang va day khong hop le, nhap lai\n";
 				} while (hang <= 0 || hang > 7 || day <= 0 || day > 10);
-				cout << "===== THONG TIN CAC SINH VIEN THEO DAY " << day << " VA HANG " << hang << " =====\n";
 
+				cout << "\n===== THONG TIN CAC SINH VIEN THEO DAY " << day << " VA HANG " << hang << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
 					if (dssv.ds[i].hang == hang && dssv.ds[i].day == day)
@@ -322,7 +322,7 @@ int main()
 					}
 				}
 
-				cout << "===== CAC SINH VIEN CO VI TRI CO THE GIAN LAN ======\n";
+				cout << "\n===== CAC SINH VIEN CO VI TRI CO THE GIAN LAN ======\n";
 				for (int i = 0; i < size; i++)
 				{
 					dsSVGianLan[i].printInfo();
