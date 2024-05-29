@@ -67,6 +67,17 @@ void inputSV(DSSV &dssv)
 	inData.close();
 }
 
+string toLower(const string a)
+{
+	string result = a;
+	for (int i = 0; i < result.length(); i++)
+	{
+		if (result[i] >= 'A' && result[i] <= 'Z')
+			result[i] += 32;
+	}
+	return result;
+}
+
 int main()
 {
 	DSSV dssv;
@@ -205,7 +216,7 @@ int main()
 				cout << "===== THONG TIN CAC SINH VIEN HOC NGANH " << k << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
-					if (dssv.ds[i].nganhHoc == k)
+					if (toLower(dssv.ds[i].nganhHoc) == toLower(k))
 					{
 						dssv.ds[i].printInfo();
 						cout << "==========================================\n";
@@ -222,7 +233,7 @@ int main()
 				cout << "===== THONG TIN CAC SINH VIEN CO QUE QUAN O " << que << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
-					if (dssv.ds[i].queQuan == que)
+					if (toLower(dssv.ds[i].queQuan) == toLower(que))
 					{
 						dssv.ds[i].printInfo();
 						cout << "==========================================\n";
