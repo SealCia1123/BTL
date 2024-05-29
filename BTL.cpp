@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -247,18 +246,18 @@ int main()
 					if (hang <= 0 || day <= 0 || hang > 10 || day > 7)
 						cout << "So hang va day khong hop le, nhap lai\n";
 				} while (hang <= 0 || day <= 0 || hang > 7 || day > 10);
+				hang -= 1;
+				day -= 1;
 
 				// Chuyen ds 1 chieu thanh 2 chieu
 				SinhVien dssv2Chieu[dssv.row][dssv.col];
 				for (int i = 0; i < dssv.n; i++)
 					dssv2Chieu[dssv.ds[i].hang - 1][dssv.ds[i].day - 1] = dssv.ds[i];
 
-				SinhVien svCanKT = dssv2Chieu[hang - 1][day - 1];
+				SinhVien svCanKT = dssv2Chieu[hang][day];
 				SinhVien dsSVGianLan[8];
 
 				int size = 0;
-				hang -= 1;
-				day -= 1;
 				switch (svCanKT.hang)
 				{
 					case 1:
