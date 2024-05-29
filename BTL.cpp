@@ -255,7 +255,10 @@ int main()
 				day -= 1;
 
 				// Chuyen ds 1 chieu thanh 2 chieu
-				SinhVien dssv2Chieu[dssv.row][dssv.col];
+				SinhVien **dssv2Chieu = new SinhVien *[dssv.row];
+				for (int i = 0; i < dssv.row; i++)
+					dssv2Chieu[i] = new SinhVien[dssv.col];
+
 				for (int i = 0; i < dssv.n; i++)
 					dssv2Chieu[dssv.ds[i].hang - 1][dssv.ds[i].day - 1] = dssv.ds[i];
 
@@ -341,6 +344,9 @@ int main()
 						cout << "==========================================\n";
 					}
 				}
+				for (int i = 0; i < dssv.row; i++)
+					delete[] dssv2Chieu[i];
+				delete[] dssv2Chieu;
 				break;
 			}
 
