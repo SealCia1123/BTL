@@ -6,6 +6,11 @@ using namespace std;
 struct Ngay
 {
 	int ngay, thang, nam;
+
+	Ngay()
+	{
+		ngay = 1, thang = 1, nam = 2000;
+	}
 };
 
 struct SinhVien
@@ -13,6 +18,13 @@ struct SinhVien
 	int hang, day;
 	string hoLot, ten, queQuan, MSSV, nganhHoc;
 	Ngay ngaySinh;
+
+	SinhVien()
+	{
+		hang = 1, day = 1,
+		hoLot = "", ten = "", queQuan = "", MSSV = "", nganhHoc = "";
+		ngaySinh.ngay = 1, ngaySinh.thang = 1, ngaySinh.nam = 2000;
+	}
 
 	void printInfo()
 	{
@@ -29,9 +41,14 @@ struct SinhVien
 
 struct DSSV
 {
-	int n;
-	int row, col;
+	int n, row, col;
 	SinhVien *ds;
+
+	DSSV()
+	{
+		n = 0, row = 0, col = 0;
+		ds = nullptr;
+	}
 };
 
 void inputSV(DSSV &dssv)
@@ -348,12 +365,14 @@ int main()
 				for (int i = 0; i < dssv.row; i++)
 					delete[] dssv2Chieu[i];
 				delete[] dssv2Chieu;
+				dssv2Chieu = nullptr;
 				break;
 			}
 
 			case 0:
 				cout << "Ket thuc chuong trinh\n";
 				delete[] dssv.ds;
+				dssv.ds = nullptr;
 				return 0;
 			default:
 				cout << "Lua chon khong hop le!\n";
@@ -367,6 +386,7 @@ int main()
 		{
 			cout << "Ket thuc chuong trinh\n";
 			delete[] dssv.ds;
+			dssv.ds = nullptr;
 			return 0;
 		}
 	}
