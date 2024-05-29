@@ -32,16 +32,6 @@ struct DSSV
 	int n;
 	int row, col;
 	SinhVien *ds;
-
-	void allocateMemory()
-	{
-		ds = new SinhVien[n];
-	}
-
-	void freeMemory()
-	{
-		delete[] ds;
-	}
 };
 
 void inputSV(DSSV &dssv)
@@ -55,7 +45,7 @@ void inputSV(DSSV &dssv)
 	dssv.n = dssv.row * dssv.col;
 
 	// Cap phat bo nho va nhap du lieu tu file
-	dssv.allocateMemory();
+	dssv.ds = new SinhVien[dssv.n];
 	for (int i = 0; i < dssv.n; i++)
 	{
 		inData >> dssv.ds[i].hang;
@@ -352,7 +342,7 @@ int main()
 
 			case 0:
 				cout << "Ket thuc chuong trinh\n";
-				dssv.freeMemory();
+				delete[] dssv.ds;
 				return 0;
 			default:
 				cout << "Lua chon khong hop le!\n";
@@ -365,7 +355,7 @@ int main()
 		if (isContinue == '0')
 		{
 			cout << "Ket thuc chuong trinh\n";
-			dssv.freeMemory();
+			delete[] dssv.ds;
 			return 0;
 		}
 	}
