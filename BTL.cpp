@@ -216,13 +216,13 @@ int main()
 
 			case 7:
 			{
-				string q;
+				string que;
 				cout << "Nhap que quan: ";
-				getline(cin, q);
-				cout << "===== THONG TIN CAC SINH VIEN CO QUE QUAN O " << q << " =====\n";
+				getline(cin, que);
+				cout << "===== THONG TIN CAC SINH VIEN CO QUE QUAN O " << que << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
-					if (dssv.ds[i].queQuan == q)
+					if (dssv.ds[i].queQuan == que)
 					{
 						dssv.ds[i].printInfo();
 						cout << "==========================================\n";
