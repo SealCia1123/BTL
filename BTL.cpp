@@ -53,6 +53,7 @@ void inputSV(DSSV &dssv)
 	inData >> dssv.col;
 	inData.ignore();
 	dssv.n = dssv.row * dssv.col;
+
 	// Cap phat bo nho va nhap du lieu tu file
 	dssv.allocateMemory();
 	for (int i = 0; i < dssv.n; i++)
@@ -205,6 +206,7 @@ int main()
 				}
 				break;
 			}
+
 			case 6:
 			{
 				string k;
@@ -221,12 +223,13 @@ int main()
 				}
 				break;
 			}
+
 			case 7:
 			{
 				string q;
 				cout << "Nhap que quan: ";
 				getline(cin, q);
-				cout << "===== THONG TIN CAC SINH VIEN CO QUE QUAN " << q << " =====\n";
+				cout << "===== THONG TIN CAC SINH VIEN CO QUE QUAN O " << q << " =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
 					if (dssv.ds[i].queQuan == q)
@@ -235,7 +238,9 @@ int main()
 						cout << "==========================================\n";
 					}
 				}
+				break;
 			}
+
 			case 10:
 			{
 				int hang, day;
