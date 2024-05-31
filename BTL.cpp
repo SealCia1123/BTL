@@ -1,3 +1,4 @@
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -259,6 +260,34 @@ int main()
 				break;
 			}
 
+			case 8:
+			{
+				// 8-Nhập khuộn dạng đầu của MSSV: In ra thông tin các sinh viên có khuôn dạng đầu của MSSV như vừa nhập. VD nhập 102 thì sẽ in ra những SV có MSSV bắt đầu bằng 102
+				// 10001:
+				// 100 -> 10001, 10002, 10003
+				// 100 -> 10101, 10201
+				char t[20];
+				cout << "Nhap khuon dang dau MSSV can tim: ";
+				cin.getline(t, 20);
+
+				int count = 0;
+				cout << "===== CAC SINH VIEN CO KHUON DANG DAU MSSV =====\n";
+				for (int i = 0; i < dssv.n; i++)
+				{
+					for (int j = 0; j < strlen(t); j++)
+					{
+						if (t[j] == dssv.ds[i].MSSV[j])
+							++count;
+					}
+					if (count == strlen(t))
+					{
+						dssv.ds[i].printInfo();
+						cout << "==========================================\n";
+					}
+					count = 0;
+				}
+				break;
+			}
 			case 10:
 			{
 				int hang, day;
