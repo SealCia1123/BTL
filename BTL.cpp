@@ -1,4 +1,9 @@
 /*
+Thanh vien:
+- 2351050041 - Mao Duc Hai
+- 2351050044 - Huynh Thanh Hieu
+- 2351050073 - Ta Hoang Khang
+
 !!! LUU Y
 Neu chay trong Visual Studio 2015 khong compile duoc thi thay giup em thuc hien 1 trong nhung cac cach sau:
 1. Chuyen sang chay tren Visual Studio 2022
@@ -35,6 +40,7 @@ struct SinhVien
 		ngaySinh.ngay = 1, ngaySinh.thang = 1, ngaySinh.nam = 2000;
 	}
 
+	// Ham de in thong tin 1 sinh vien
 	void printInfo()
 	{
 		cout << "Hang: " << hang << "\n";
@@ -64,6 +70,11 @@ void inputSV(DSSV &dssv)
 {
 	ifstream inData;
 	inData.open("SoDoSinhVien.txt", ios::in);
+	if (!inData.is_open())
+	{
+		cout << "Mo file that bai\n";
+		return;
+	}
 	inData >> dssv.row;
 	inData.ignore();
 	inData >> dssv.col;
@@ -93,6 +104,7 @@ void inputSV(DSSV &dssv)
 	inData.close();
 }
 
+// Ham tra ve chuoi da in thuong
 string toLower(const string a)
 {
 	string result = a;
@@ -125,6 +137,7 @@ int main()
 		cout << "Nhap vao lua chon: ";
 		cin >> choice;
 		cin.ignore();
+
 		switch (choice)
 		{
 			case 1:
@@ -270,12 +283,14 @@ int main()
 
 			case 8:
 			{
-				char t[20];
+				char t[21];
 				cout << "Nhap khuon dang dau MSSV can tim: ";
-				cin.getline(t, 20);
+				cin.getline(t, 21);
 
 				int count = 0;
 				cout << "===== CAC SINH VIEN CO KHUON DANG DAU MSSV =====\n";
+				// Duyet mang ky tu nguoi dung nhap vao, dem so ky tu trung so voi do dai mang ky tu
+				// Neu bang do dai mang thi in thong tin sinh vien
 				for (int i = 0; i < dssv.n; i++)
 				{
 					for (int j = 0; j < strlen(t); j++)
@@ -295,12 +310,11 @@ int main()
 
 			case 9:
 			{
-				char t[20];
+				char t[21];
 				cout << "Nhap khuon dang cuoi MSSV can tim: ";
-				cin.getline(t, 20);
+				cin.getline(t, 21);
 
 				int count = 0;
-
 				cout << "===== CAC SINH VIEN CO KHUON DANG CUOI MSSV =====\n";
 				for (int i = 0; i < dssv.n; i++)
 				{
